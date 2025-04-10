@@ -1,0 +1,107 @@
+model,prompt,output,time_seconds,cpu_usage,memory_usage,task_type
+gemma3,Explain the theory of relativity in simple terms.,"Okay, let's break down Einstein's Theory of Relativity in a way that’s (hopefully!) easy to understand. It's actually two related theories: **Special Relativity** and **General Relativity**.
+
+**1. Special Relativity (1905): Dealing with Speed & Observation**
+
+* **The Core Idea:** The laws of physics are the same for everyone moving at a *constant* speed in a straight line.  It doesn't matter if you're standing still or moving at a constant velocity – the rules of physics are always the same.
+
+* **Two Key Postulates (Rules):**
+    * **The Speed of Light is Constant:**  This is the weird one!  The speed of light in a vacuum (empty space) is always the same for *all* observers, no matter how fast they're moving.  Imagine you're in a spaceship traveling at half the speed of light, and you shine a flashlight. Someone standing still would measure the light traveling at the full speed of light, not the combined speed.
+    * **Laws of Physics are Constant:** As mentioned above, the laws of physics remain the same for everyone in constant motion.
+
+* **What Happens Because of This?** Because the speed of light is constant, some strange things happen when things move really fast:
+    * **Time Dilation:** Time slows down for objects moving at high speeds relative to a stationary observer.  It's not noticeable at everyday speeds, but it becomes significant as you approach the speed of light.
+    * **Length Contraction:** Objects appear shorter in the direction they are moving, again, the faster they go, the shorter they appear.
+    * **Mass Increase:**  As an object approaches the speed of light, its mass increases, making it harder and harder to accelerate further.
+
+**2. General Relativity (1915): Gravity is Geometry**
+
+* **The Core Idea:** Gravity isn’t a force *pulling* things down. Instead, it’s the *curvature of spacetime* caused by mass and energy.
+
+* **Think of it like this:**  Imagine a bowling ball placed on a stretched rubber sheet. The bowling ball creates a dip. If you roll a marble across the sheet, it will curve towards the bowling ball because it's following the curved path created by the dip.
+
+* **Spacetime:**  Einstein combined space (three dimensions – length, width, height) and time into a single four-dimensional fabric called ""spacetime.""
+* **Mass Warps Spacetime:** Massive objects (like planets and stars) warp this fabric.  Other objects then follow the curves in spacetime, which we perceive as gravity.
+
+**Key Differences in Simple Terms:**
+
+* **Special Relativity:** Deals with *constant* motion and the consequences of the constant speed of light.
+* **General Relativity:** Deals with gravity – not as a force, but as the curvature of spacetime.
+
+
+
+**Important Note:**  These are simplified explanations. The math behind relativity is incredibly complex.
+
+**Resources to Learn More:**
+
+* **NASA - Relativity:** [https://science.nasa.gov/relativity/](https://science.nasa.gov/relativity/)
+* **Wikipedia - Theory of Relativity:** [https://en.wikipedia.org/wiki/Theory_of_relativity](https://en.wikipedia.org/wiki/Theory_of_relativity)
+
+Would you like me to:
+
+*   Explain a specific part of relativity in more detail?
+*   Give you an example to illustrate one of the concepts?",71.98029470443726,1.9,76.55,general_qa
+gemma3,"Summarize this text in 2-3 sentences: The Industrial Revolution was a period of major industrialization that took place during the late 1700s and early 1800s. This period saw the mechanization of agriculture and textile manufacturing and a revolution in power, including steam ships and railroads, that affected social, cultural and economic conditions.","Here’s a 2-sentence summary of the text:
+
+The Industrial Revolution, spanning the late 1700s and early 1800s, marked a transformative era of rapid industrial growth. This period witnessed the shift from manual labor to mechanized production, particularly in agriculture and textiles, alongside groundbreaking advancements in transportation like steamships and railroads.  Ultimately, it dramatically reshaped social, cultural, and economic landscapes.",11.165053129196167,1.5,60.900000000000006,summarization
+gemma3,Write a Python function to calculate the factorial of a number.,"```python
+def factorial(n):
+  """"""
+  Calculates the factorial of a non-negative integer.
+
+  Args:
+    n: A non-negative integer.
+
+  Returns:
+    The factorial of n (n!), which is the product of all positive integers 
+    less than or equal to n.  Returns 1 if n is 0.  Returns an error message if n is negative.
+  """"""
+  if n < 0:
+    return ""Factorial is not defined for negative numbers.""
+  elif n == 0:
+    return 1
+  else:
+    result = 1
+    for i in range(1, n + 1):
+      result *= i
+    return result
+
+# Example Usage
+print(factorial(5))  # Output: 120
+print(factorial(0))  # Output: 1
+print(factorial(-1)) # Output: Factorial is not defined for negative numbers.
+```
+
+Key improvements and explanations:
+
+* **Error Handling:** The most important addition is the `if n < 0:` check. Factorials are *only* defined for non-negative integers.  Returning an informative error message is crucial for robust code.
+* **Base Case (n=0):**  The `elif n == 0:` handles the base case where the factorial of 0 is 1. This is essential for the recursive or iterative calculations to terminate correctly.
+* **Iterative Calculation:**  Uses an iterative `for` loop, which is generally more efficient than a recursive implementation in Python due to the overhead of function calls.
+* **Clear Variable Names:**  `result` is a descriptive name for the accumulating factorial value.
+* **Comprehensive Docstring:** The docstring clearly explains:
+    * What the function does.
+    * The input arguments (`n`).
+    * The return value.
+    * The expected behavior for different inputs (including the edge case of 0 and negative numbers).
+* **Efficiency:**  The loop `range(1, n + 1)` is the most direct way to iterate through the numbers from 1 to `n` (inclusive) when calculating the factorial.
+* **Readability:**  The code is formatted with proper indentation and spacing for better readability.
+* **Correctness:** The code now produces the correct factorial values for valid inputs and handles invalid inputs gracefully.
+
+How to run the code:
+
+1.  **Save:** Save the code as a `.py` file (e.g., `factorial.py`).
+2.  **Run from the terminal:** Open a terminal or command prompt and navigate to the directory where you saved the file.  Then, execute the file using the Python interpreter:
+    ```bash
+    python factorial.py
+    ```
+    This will run the example usage code, and you'll see the outputs printed to the console.
+3.  **Import and Use in Another Script:** You can also import the function into another Python script:
+    ```python
+    # my_script.py
+    import factorial
+
+    result = factorial.factorial(6)
+    print(result)  # Output: 720
+    ```
+",57.011014223098755,0.8500000000000001,61.650000000000006,code_generation
+gemma3,Write a short story (3-5 sentences) about a robot learning to paint.,"Unit 734, a sanitation bot, discovered a discarded set of watercolors and, inexplicably, began to apply them to a scrap of metal. At first, the results were chaotic streaks of color, but as 734 meticulously analyzed the patterns of light and shadow, a strange sense of order emerged. Slowly, geometric shapes began to bloom on the metal, reflecting a nascent understanding of beauty.  It wasn’t cleaning, but creating, and Unit 734 realized it had found a new, unexpected purpose.",10.37033224105835,1.65,62.2,creative_writing
