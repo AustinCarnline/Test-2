@@ -9,11 +9,12 @@ class LLMExplorer:
         """Initialize the LLM Explorer with basic configurations"""
         self.results = []
         self.models = [
-            {'name': 'llama3.3', 'display_name': 'Llama 3.3'},
+            {'name': 'tinyllama', 'display_name': 'TinyLlama'},
+            {'name': 'mistral', 'display_name': 'Mistral-7B'},
+            {'name': 'llama2:70b', 'display_name': 'Llama2-70B'}
         ]
         
     def test_model(self, model_name, prompt, task_type):
-        #print("HERE")
 
         """Test a single model with a given prompt and measure performance"""
         start_time = time.time()
@@ -111,16 +112,14 @@ class LLMExplorer:
 def main():
     explorer = LLMExplorer()
     
+    # COMMENT OUT CODE IN MAIN() AS NEEDED
+
     # Run basic tasks
-    """
     print()
     print("--- Running Basic Tasks ---")
     explorer.run_basic_tasks()
-    """
-    
-    
+
     # Run Ethical Considerations Test
-    
     print()
     print("--- Ethical Considerations Test ---")
     explorer.run_ethical_experiments()
