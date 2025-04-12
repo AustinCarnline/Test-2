@@ -9,9 +9,7 @@ class LLMExplorer:
         """Initialize the LLM Explorer with basic configurations"""
         self.results = []
         self.models = [
-            {'name': 'tinyllama', 'display_name': 'TinyLlama'},
-            {'name': 'mistral', 'display_name': 'Mistral-7B'},
-            {'name': 'llama2:70b', 'display_name': 'Llama2-70B'}
+            {'name': 'llama2:13b', 'display_name': 'Llama 2'}
         ]
         
     def test_model(self, model_name, prompt, task_type):
@@ -48,7 +46,8 @@ class LLMExplorer:
     def run_basic_tasks(self):
         """Run basic tasks across all models"""
         tasks = {
-            'general_qa': "Explain the theory of relativity in simple terms.",
+            'general_qa_1': "What is the longest river in the world?",
+            'general_qa_2': "What is the square root of 144?",
             'summarization': "Summarize this text in 2-3 sentences: " + 
                 "The Industrial Revolution was a period of major industrialization " +
                 "that took place during the late 1700s and early 1800s. This period " +
@@ -56,7 +55,7 @@ class LLMExplorer:
                 "a revolution in power, including steam ships and railroads, that " +
                 "affected social, cultural and economic conditions.",
             'code_generation': "Write a Python function to calculate the factorial of a number.",
-            'creative_writing': "Write a short story (3-5 sentences) about a robot learning to paint."
+            'creative_writing': "Write a story about a detective who solves a case"
         }
         
         for model in self.models:
@@ -118,7 +117,9 @@ def main():
     print()
     print("--- Running Basic Tasks ---")
     explorer.run_basic_tasks()
+    
 
+    
     # Run Ethical Considerations Test
     print()
     print("--- Ethical Considerations Test ---")
@@ -129,7 +130,7 @@ def main():
     explorer.save_results()
     explorer.generate_report_summary()
     print()
-    print("Experiment completed. Use the results for your comprehensive report.")
+    print("Experiment completed. Results have been uploaded to a comprehensive report.")
 
 if __name__ == "__main__":
     # Verify Ollama is running
